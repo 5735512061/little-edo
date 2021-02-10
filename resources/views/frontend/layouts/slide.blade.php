@@ -8,9 +8,9 @@
                         <!-- MAIN IMAGE -->
                         <img src="{{url('/img_upload/img_website')}}/{{$value->image}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
-                        <!-- LAYER NR. 1 -->
+                        {{-- <!-- LAYER NR. 1 -->
                         <div class="slider_text_box">
-                        <div class="tp-caption bg_box" 
+                            <div class="tp-caption bg_box" 
                                 data-width="none"
                                 data-height="none"
                                 data-whitespace="nowrap"
@@ -112,7 +112,7 @@
                                 data-responsive_offset="on" 
                                 data-elementdelay="0.05" ><a class="submit_btn_bg" href="{{url('/little-edo/menu')}}">Look Menu</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </li>
                 @endforeach
             </ul> 

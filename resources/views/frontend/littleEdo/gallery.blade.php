@@ -14,6 +14,16 @@
     <!--================End Banner Area =================-->
 
     <!--================Our Gallery Area =================-->
+    <div class="container"><br>
+        <div class="row">
+            @foreach ($gallery_menu_images as $gallery_menu_image => $value)
+                <div class="col-md-3 col-sm-6" style="margin-bottom: 10px;">
+                    <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" class="img-responsive">
+                </div>
+            @endforeach
+        </div>
+    </div>
+    
     <section class="our_gallery_area">
         <div class="container">
             <div class="row our_gallery_ms_inner">

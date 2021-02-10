@@ -3,7 +3,6 @@
 @section("content")
     
     @include("/frontend/layouts/slide")
-
     <!--================Our Chefs Area =================-->
     {{-- <section class="our_chefs_area">
         <div class="container">
@@ -23,8 +22,8 @@
     <!--================End Our Chefs Area =================-->
         
     <!--================Booking Table Area =================-->
-    {{-- <section class="booking_table_area">
-        <div class="container">
+    {{-- <section class="banner_area"> --}}
+        {{-- <div class="container">
             <div class="s_white_title">
                 <h3>สำรองที่นั่ง</h3>
                 <p>*เพื่อความสะดวกและไม่เสียเวลาของคุณลูกค้า ทางร้านแนะนำให้สำรองที่นั่งล่วงหน้าจะดีที่สุดครับ</p>
@@ -67,8 +66,8 @@
                     </div>
                 </div>
             </form>
-        </div>
-    </section> --}}
+        </div> --}}
+    {{-- </section> --}}
     <!--================Recent Blog Area =================-->
     {{-- <section class="recent_bloger_area">
         <div class="container">

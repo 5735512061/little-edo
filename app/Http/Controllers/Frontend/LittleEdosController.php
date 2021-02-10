@@ -34,7 +34,9 @@ class LittleEdosController extends Controller
 
     public function gallery() {
         $gallery_images = Image::where('type','gallery_image')->get();
-        return view('frontend/littleEdo/gallery')->with('gallery_images',$gallery_images);
+        $gallery_menu_images = Image::where('type','gallery_menu_image')->get();
+        return view('frontend/littleEdo/gallery')->with('gallery_images',$gallery_images)
+                                                 ->with('gallery_menu_images',$gallery_menu_images);
     }
 
     public function menu() {
