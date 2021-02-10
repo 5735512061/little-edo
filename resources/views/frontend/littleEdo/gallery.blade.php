@@ -1,5 +1,7 @@
 @extends("/frontend/layouts/template/template")
-
+<script type="text/javascript" src="{{asset('js/halkaBox.min.js')}}"></script> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/halkaBox.min.css')}}"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+<script type="text/javascript" src="{{asset('js/image-lightbox.js')}}"></script> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
 @section("content")
     <!--================Banner Area =================-->
     <section class="banner_area_gallery banner_area">
@@ -18,7 +20,11 @@
         <div class="row">
             @foreach ($gallery_menu_images as $gallery_menu_image => $value)
                 <div class="col-md-3 col-sm-6" style="margin-bottom: 10px;">
-                    <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" class="img-responsive">
+                    <div class="gallery" id="single-images"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+                        <a href="{{url('/img_upload/img_website')}}/{{$value->image}}" class="singleImage2"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+                            <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" class="img-responsive">
+                        </a>
+                    </div>
                 </div>
             @endforeach
         </div>

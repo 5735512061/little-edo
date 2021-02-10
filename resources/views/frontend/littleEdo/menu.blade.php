@@ -1,5 +1,7 @@
 @extends("/frontend/layouts/template/template")
-
+<script type="text/javascript" src="{{asset('js/halkaBox.min.js')}}"></script> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/halkaBox.min.css')}}"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+<script type="text/javascript" src="{{asset('js/image-lightbox.js')}}"></script> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
 @section("content")
     <!--================Banner Area =================-->
     <section class="banner_area_menu banner_area">
@@ -31,15 +33,19 @@
                     @foreach ($menus as $menu => $value)
                         <div class="col-md-3 col-sm-6 {{$value->group}}">
                             <div class="feature_item">
-                                <div class="feature_item_inner">
-                                    <img src="{{url('/img_upload/menu/')}}/{{$value->image}}">
-                                </div>
-                                <div class="title_text">
-                                    <div class="feature_left"><span>{{$value->engName}}</span></div>
-                                    <div class="feature_left"><span>{{$value->japName}}</span></div><br>
-                                    <div class="feature_left"><span>{{$value->thaiName}}</span></div>
-                                    <div class="restaurant_feature_dots"></div>
-                                    <div class="feature_right">{{$value->price}}</div>
+                                <div class="gallery" id="single-images"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+                                    <a href="{{url('/img_upload/menu/')}}/{{$value->image}}" class="singleImage2"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+                                        <div class="feature_item_inner">
+                                            <img src="{{url('/img_upload/menu/')}}/{{$value->image}}">
+                                        </div>
+                                    </a>
+                                    <div class="title_text">
+                                        <div class="feature_left"><span>{{$value->engName}}</span></div>
+                                        <div class="feature_left"><span>{{$value->japName}}</span></div><br>
+                                        <div class="feature_left"><span>{{$value->thaiName}}</span></div>
+                                        <div class="restaurant_feature_dots"></div>
+                                        <div class="feature_right">{{$value->price}}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
