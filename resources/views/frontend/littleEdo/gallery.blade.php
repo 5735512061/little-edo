@@ -29,7 +29,7 @@
             @endforeach
         </div>
     </div>
-    
+
     <section class="our_gallery_area">
         <div class="container">
             <div class="row our_gallery_ms_inner">
