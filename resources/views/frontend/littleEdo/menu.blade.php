@@ -2,6 +2,13 @@
 <script type="text/javascript" src="{{asset('js/halkaBox.min.js')}}"></script> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/halkaBox.min.css')}}"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
 <script type="text/javascript" src="{{asset('js/image-lightbox.js')}}"></script> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+<style>
+@media only screen and (max-width: 768px) {
+    #mobile {
+      width: 100% !important;
+    }
+}
+</style>
 @section("content")
     <!--================Banner Area =================-->
     <section class="banner_area_menu banner_area">
@@ -36,7 +43,7 @@
                                 <div class="gallery" id="single-images"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
                                     <a href="{{url('/img_upload/menu/')}}/{{$value->image}}" class="singleImage2"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
                                         <div class="feature_item_inner">
-                                            <img src="{{url('/img_upload/menu/')}}/{{$value->image}}">
+                                            <img id="mobile" src="{{url('/img_upload/menu/')}}/{{$value->image}}" style="width:230px; height:150px;">
                                         </div>
                                     </a>
                                     <div class="title_text">
