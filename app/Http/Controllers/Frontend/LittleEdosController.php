@@ -40,7 +40,7 @@ class LittleEdosController extends Controller
     }
 
     public function menu() {
-        $menus = Menu::orderBy('id','asc')->get();
+        $menus = Menu::get();
         return view('frontend/littleEdo/menu')->with('menus',$menus);
     }
 

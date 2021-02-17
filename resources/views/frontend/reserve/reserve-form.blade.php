@@ -2,7 +2,7 @@
 
 @section("content")
     <!--================Booking Table Area =================-->
-    <section class="booking_table_area top_content">
+    <section class="booking_table_area">
         <div class="container">
             <div class="s_white_title">
                 <h3>สำรองที่นั่ง</h3>
@@ -66,6 +66,7 @@
             </form>
         </div>
     </section>
+    @include("/frontend/layouts/navbar")
 
     <!-- Jquery JS-->
     <script type="text/javascript" src="{{asset('vendor/jquery/jquery.min.js')}}"></script>

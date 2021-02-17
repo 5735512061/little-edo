@@ -11,6 +11,7 @@
             </div>
         </div>
     </section>
+    @include("/frontend/layouts/navbar")
     <!--================End Banner Area =================-->
 
     <!--================Contact Area =================-->

@@ -20,6 +20,7 @@
             </div>
         </div>
     </section>
+    @include("/frontend/layouts/navbar")
     <!--================End Banner Area =================-->
     <section class="most_popular_item_area menu_list_page">
         <div class="container">

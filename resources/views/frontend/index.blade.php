@@ -1,7 +1,5 @@
-@extends("/frontend/layouts/template/template")
+@extends("/frontend/layouts/template/template-index")
 
 @section("content")
-    
-    @include("/frontend/layouts/slide")
 
 @endsection

@@ -3888,14 +3888,14 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .f_w_title h4 {
   font-size: 18px;
-  /* font-family: "Cantata One", serif; */
   font-family: 'Kanit', sans-serif;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .footer_widget_area {
-  background: #181818;
+  background: #fff;
   padding: 100px 0px;
 }
 
@@ -3963,7 +3963,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .contact_widget ul li a {
   position: relative;
-  color: #fff;
+  color: #000;
   font-size: 14px;
   line-height: 28px;
   font-family: 'Kanit', sans-serif;

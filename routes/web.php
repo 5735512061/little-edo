@@ -24,11 +24,14 @@ Route::get('/','Frontend\\LittleEdosController@index');
 
 // หน้าเว็บไซต์ little edo
 Route::group(['prefix' => '/little-edo'], function(){ 
+    // ลูกค้าติดต่อ
     Route::get('/contact-us','Frontend\\LittleEdosController@contactUs');
     Route::post('/contact-us','Frontend\\LittleEdosController@contactUsPost');
+    // แกลอรี่
     Route::get('/gallery','Frontend\\LittleEdosController@gallery');
+    // รุปภาพเมนู
     Route::get('/menu','Frontend\\LittleEdosController@menu');
-
+    // ลูกค้าจองโต๊ะ
     Route::get('/reserve-seat','Frontend\\ReservesController@reserveSeat');
     Route::post('/reserve-seat','Frontend\\ReservesController@reserveSeatPost');
 
