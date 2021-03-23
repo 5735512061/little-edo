@@ -72,7 +72,7 @@
                             <li><a href="{{url('/')}}">HOME</a></li>
                             <li><a href="{{url('/little-edo/menu')}}">MENU</a></li>
                             <li><a href="{{url('/little-edo/gallery')}}">GALLERY</a></li>
-                            <li><a href="{{url('/little-edo/reserve-seat')}}">BOOK A TABLE</a></li>
+                            {{-- <li><a href="{{url('/little-edo/reserve-seat')}}">BOOK A TABLE</a></li> --}}
                         </ul>
                     </aside>
                 </div>
