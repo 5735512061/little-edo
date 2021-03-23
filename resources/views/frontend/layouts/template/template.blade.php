@@ -14,6 +14,7 @@
 		@include("/frontend/layouts/css")
 	</head>
 	<body>
+		@include("/frontend/layouts/navbar")
 		@include("/frontend/layouts/header")
 		@yield("content")
 		@include("/frontend/layouts/footer")

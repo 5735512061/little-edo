@@ -1,5 +1,5 @@
 <!--================Slider Area =================-->
-<section class="slider_area">
+<section class="slider_area" style="margin-top: 100px;">
     <div class=slider_inner>
         <div class="rev_slider fullwidthabanner"  data-version="5.3.0.2" id="home-slider">
             <ul> 

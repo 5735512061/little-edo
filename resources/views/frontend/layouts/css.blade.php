@@ -11,5 +11,6 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('vendors/owl-carousel/assets/owl.carousel.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/navbar.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('vendor/datepicker/daterangepicker.css')}}">
 <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />

@@ -16,3 +16,4 @@
 <script type="text/javascript" src="{{asset('vendors/countdown/jquery.countdown.js')}}"></script>
 <script type="text/javascript" src="{{asset('vendors/js-calender/zabuto_calendar.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/theme.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/navbar.js')}}"></script>

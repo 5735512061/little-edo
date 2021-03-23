@@ -1,23 +1,20 @@
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-<style>
-.btn-group.special {
-  display: flex;
-  font-family: 'kanit' !important;
-  
-}
-
-.special .btn {
-  flex: 1;
-  font-size: 20px !important;
-  font-weight: bold;
-  padding: 25px 35px !important;
-}
-</style>
-
-<div class="btn-group special" role="group">
-    <a href="{{url('/')}}" class="btn btn-default">Home</a>
-    <a href="{{url('/little-edo/menu')}}" class="btn btn-default">Menu</a>
-    <a href="{{url('/little-edo/gallery')}}" class="btn btn-default">Gallery</a>
-    {{-- <a href="{{url('/little-edo/reserve-seat')}}" class="btn btn-default">Book a table</a> --}}
-    <a href="{{url('/little-edo/contact-us')}}" class="btn btn-default">Contact Us</a>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="{{url('/')}}">Home</a></li>
+        <li><a href="{{url('/little-edo/menu')}}">Menu</a></li>
+        <li><a href="{{url('/little-edo/gallery')}}">Gallery</a></li>
+        <li><a href="{{url('/little-edo/contact-us')}}">Contact Us</a></li>
+        {{-- <li><a href="{{url('/little-edo/reserve-seat')}}">Book a table</a></li> --}}
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
 </div>
