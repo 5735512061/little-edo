@@ -19,6 +19,7 @@
                             <option style="font-family: 'kanit' !important;" value="slide_special_image">รูปสไลด์เมนูพิเศษ</option>
                             <option style="font-family: 'kanit' !important;" value="gallery_image">รูปแกลอรี่</option>
                             <option style="font-family: 'kanit' !important;" value="gallery_menu_image">รูปแกลอรี่เมนู</option>
+                            <option style="font-family: 'kanit' !important;" value="special_menu">เมนูพิเศษ</option>
                         </select>
                     </div>
                 </div>

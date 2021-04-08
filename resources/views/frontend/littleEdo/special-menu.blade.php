@@ -14,37 +14,22 @@
 </style>
 @section("content")
     <!--================Banner Area =================-->
-    <section class="banner_area_gallery banner_area">
+    <section class="banner_area_menu banner_area">
         <div class="container">
             <div class="banner_content">
-                <h4>Gallery</h4>
+                <h4>SPECIAL MENU</h4>
                 <a href="{{url('/')}}">HOME</a>
-                <a class="active" href="#">GALLERY</a>
+                <a class="active" href="#">SPECIAL MENU</a>
             </div>
         </div>
     </section>
     <!--================End Banner Area =================-->
     @include("/frontend/layouts/navbar")
 
-    <!--================Our Gallery Area =================-->
-    <div class="container"><br>
-        <div class="row">
-            @foreach ($gallery_menu_images as $gallery_menu_image => $value)
-                <div class="col-md-3 col-sm-6" style="margin-bottom: 10px;">
-                    <div class="gallery" id="single-images"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
-                        <a href="{{url('/img_upload/img_website')}}/{{$value->image}}" class="singleImage2"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
-                            <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" class="img-responsive" style="width:100% !important;">
-                        </a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-
     <section class="our_gallery_area" id="desktop">
         <div class="container">
             <div class="row our_gallery_ms_inner">
-                @foreach ($gallery_images as $gallery_image => $value)
+                @foreach ($special_menus as $special_menu => $value)
                     <div class="col-md-4 col-sm-6">
                         <div class="our_gallery_item">
                             <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" alt="">
@@ -62,7 +47,7 @@
     <section class="our_gallery_area" id="mobile" style="display: none;">
         <div class="container">
             <div class="row">
-                @foreach ($gallery_images as $gallery_image => $value)
+                @foreach ($special_menus as $special_menu => $value)
                     <div class="col-md-4 col-sm-6">
                         <div class="our_gallery_item">
                             <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" alt="">

@@ -11,6 +11,7 @@
       <ul class="nav navbar-nav">
         <li><a href="{{url('/')}}">Home</a></li>
         <li><a href="{{url('/little-edo/menu')}}">Menu</a></li>
+        <li><a href="{{url('/little-edo/special-menu')}}">Special Menu</a></li>
         <li><a href="{{url('/little-edo/gallery')}}">Gallery</a></li>
         <li><a href="{{url('/little-edo/contact-us')}}">Contact Us</a></li>
         <li><a href="https://goo.gl/maps/xrXGYLGc18yepk2i8">Maps</a></li>

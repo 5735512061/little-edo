@@ -34,7 +34,8 @@ Route::group(['prefix' => '/little-edo'], function(){
     // ลูกค้าจองโต๊ะ
     Route::get('/reserve-seat','Frontend\\ReservesController@reserveSeat');
     Route::post('/reserve-seat','Frontend\\ReservesController@reserveSeatPost');
-
+    // เมนูพิเศษ
+    Route::get('/special-menu','Frontend\\LittleEdosController@specialMenu');
 });
 
 Route::group(['middleware' => ['auth']], function () {
