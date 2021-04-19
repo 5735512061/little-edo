@@ -36,6 +36,7 @@
 	line-height: inherit;
 }
 </style>
+<hr>
 <footer class="footer_area">
     <div class="footer_widget_area">
         <div class="container">

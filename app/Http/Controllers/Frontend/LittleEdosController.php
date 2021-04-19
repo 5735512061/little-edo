@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use App\model\Menu;
 use App\model\Contact;
 use App\model\Image;
+use App\model\CustomerPrivilege;
+
+use Carbon\Carbon;
 
 class LittleEdosController extends Controller
 {
@@ -47,6 +50,62 @@ class LittleEdosController extends Controller
     public function specialMenu(){
         $special_menus = Image::where('type','special_menu')->get();
         return view('frontend/littleEdo/special-menu')->with('special_menus',$special_menus);
+    }
+
+    public function registerPrivilege() {
+        return view('frontend/customer/register-privilege');
+    }
+
+    public function registerPrivilegePost(Request $request){
+        $name = $request->name;
+        $phone = $request->phone;
+        $address = $request->address;
+        $privilege = $request->privilege;
+        $card_id = $request->card_id;
+        $date = Carbon::now()->format('d/m/Y'); //เหมือนกัน
+        $code = str_random(8);
+        
+        $phone_unique = count(CustomerPrivilege::where('phone',$phone)->get());
+        $card_id_unique = count(CustomerPrivilege::where('card_id',$card_id)->get());
+        
+        if($phone_unique == 0 || $card_id == 0) {
+            if($name == null || $phone == null || $address == null || $privilege == null || $card_id == null) { // ไม่ได้กรอกข้อมูล
+                $objData = new \stdClass();
+                $objData->status = "NULL";
+    
+                return response()->json($objData);
+            }
+            else {
+                $customer_privilege = new CustomerPrivilege;
+                $customer_privilege->card_id = $card_id;
+                $customer_privilege->name = $name;
+                $customer_privilege->phone = $phone;
+                $customer_privilege->address = $address;
+                $customer_privilege->privilege = $privilege;
+                $customer_privilege->date = $date;
+                $customer_privilege->code = $code;
+                $customer_privilege->save();
+    
+                $objData = new \stdClass();
+                $objData->name = $name;
+                $objData->code = $code;
+                $objData->privilege = $privilege;
+                $objData->status = "Pass";
+    
+                return response()->json($objData);
+            }
+        }
+        elseif($card_id_unique != 0) {
+            $objData = new \stdClass();
+            $objData->status = "card_id_unique";
+            return response()->json($objData);
+        }
+        elseif($phone_unique != 0) {
+            $objData = new \stdClass();
+            $objData->status = "phone_unique";
+            return response()->json($objData);
+        }
+        
     }
 
 }
