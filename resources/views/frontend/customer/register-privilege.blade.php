@@ -38,7 +38,7 @@
                         <div class="form-group col-md-12">
                             <textarea class="form-control" name="address" id="address" placeholder="ที่อยู่ปัจจุบัน"></textarea>
                           </div>
-                        <input type="hidden" name="privilege" value="รับฟรี เนื้อวากิว A4 100g เมื่อทานอาหารครบ 1,000 บาท" id="privilege">
+                        <input type="hidden" name="privilege" value="รับฟรี เนื้อวากิว A4 100g<br>เมื่อทานอาหารครบ 1,000 บาท" id="privilege">
                         <div class="form-group col-md-12">
                             <button class="btn btn-default submit_btn btn_sub" type="submit" class="send" data-toggle="modal" data-target="#myModal" data-backdrop="static">ลงทะเบียนรับสิทธิ์</button>
                         </div>
@@ -55,7 +55,7 @@
             <div class="modal-body">
                 <div id="tag-id"></div>
             </div>
-            <div class="modal-footer" style="background-color: #0517C4;">
+            <div class="modal-footer" style="background-color: #979797;">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">ปิด</button>
             </div>
         </div>
@@ -163,16 +163,16 @@ $('.sendurl').submit(function(e){
         },
             success: function(response) {
                 if(response.status === "NULL") {
-                    $('#tag-id').html('<p style="text-align: center;">กรุณากรอกข้อมูลให้ครบถ้วน</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#979797;">กรุณากรอกข้อมูลให้ครบถ้วน</p>')
                 }
                 else if(response.status == "phone_unique"){
-                    $('#tag-id').html('<p style="text-align: center;">หมายเลขโทรศัพท์นี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#979797;">หมายเลขโทรศัพท์นี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
                 }
                 else if(response.status == "card_id_unique"){
-                    $('#tag-id').html('<p style="text-align: center;">หมายเลขบัตรประชาชนนี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#979797;">หมายเลขบัตรประชาชนนี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
                 }
                 else if(response.status === "Pass"){
-                    $('#tag-id').html('<p style="text-align: center; font-weight: bold; color:#0517c4;">สิทธิพิเศษสำหรับ คุณ'+response.name+'</p><p style="text-align: center; color:#0517c4;">'+response.privilege+'</p><p style="text-align: center; background-color:#0517c4; color:#ffffff; margin:0px 80px 0px 80px;">'+response.code+'</p><p style="margin-top:5px;font-size:15px; text-align: center; color:#979797;">* กรุณาแสดงรหัสเพื่อรับสิทธิพิเศษ</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-weight: bold; color:#979797; font-family:Kanit;">สิทธิพิเศษสำหรับ คุณ'+response.name+'</p><p style="text-align: center; color:#979797; font-family:Kanit;">'+response.privilege+'</p><p style="text-align: center; background-color:#979797; color:#ffffff; margin:0px 80px 0px 80px; font-family:Kanit;">'+response.code+'</p><p style="margin-top:5px;font-size:15px; text-align: center; color:#979797; font-family:Kanit;">* กรุณาแสดงรหัสเพื่อรับสิทธิพิเศษ</p>')
                 }
                 console.log(response);
             }
