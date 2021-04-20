@@ -80,6 +80,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/customer-privilege','Backend\\AdminController@customerPrivilege');
         Route::get('/delete-customer-privilege/{id}','Backend\\AdminController@deleteCustomerPrivilege');
         Route::post('/update-status-privilege','Backend\\AdminController@updateStatusPrivilege');
+        Route::post('/search-privilege', 'Backend\AdminController@searchPrivilege');
         
     });
 });
@@ -110,4 +111,5 @@ Route::group(['prefix' => 'adminAsst'], function(){
     // ตรวจสอบสิทธิ์
     Route::get('/customer-privilege','Backend\\AdminAsstController@customerPrivilege');
     Route::post('/update-status-privilege','Backend\\AdminAsstController@updateStatusPrivilege');
+    Route::post('/search-privilege', 'Backend\AdminAsstController@searchPrivilege');
 });

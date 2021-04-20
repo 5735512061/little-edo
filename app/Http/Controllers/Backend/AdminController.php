@@ -275,4 +275,20 @@ class AdminController extends Controller
         return back();
     }
 
+    public function searchPrivilege(Request $request){
+        $NUM_PAGE = 50;
+        $card_id_search = $request->get('card_id_search');
+        $code_search = $request->get('code_search');
+
+        $privileges = CustomerPrivilege::where('card_id', $card_id_search) 
+                                       ->orWhere('code', $code_search) 
+                                       ->paginate($NUM_PAGE);
+
+        $page = $request->input('page');
+        $page = ($page != null)?$page:1;
+        return view('backend/admin/privilege/customer-privilege')->with('NUM_PAGE',$NUM_PAGE)
+                                                                 ->with('page',$page)
+                                                                 ->with('privileges',$privileges);
+    }
+
 }

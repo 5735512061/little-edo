@@ -3,9 +3,25 @@
 @section("content")
 <div class="col-md-1"></div>
 <div class="col-md-10 col-12 col-sm-12">
-    <div class="card">
+    <div class="card"><br>
         <div class="s_black_title">
             <h3>สิทธิพิเศษ</h3>
+        </div><br>
+        <div class="container">
+            <form action="{{url('/adminAsst/search-privilege')}}" enctype="multipart/form-data" method="post">@csrf
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3" style="margin-top: 10px;">
+                        <input type="text" name="code_search" class="form-control" placeholder="ค้นหาตามรหัสรับสิทธิ์"><br>
+                        <button type="submit" class="btn btn-primary">ค้นหารหัสรับสิทธิ์</button>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 10px;">
+                        <input type="text" onkeyup="autoTab(this)" id="txtID" name="card_id_search" class="form-control" placeholder="ค้นหาตามหมายเลขบัตรประชาชน"><br>
+                        <button type="submit" class="btn btn-primary">ค้นหาหมายเลขบัตรประชาชน</button>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </form>
         </div>
         <div class="card-body">
             <div class="table-responsive">
