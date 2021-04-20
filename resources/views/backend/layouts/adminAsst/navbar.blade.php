@@ -16,6 +16,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{url('/adminAsst/list-menu')}}">จัดการเมนูอาหาร</a></li>
                     <li><a href="{{url('/adminAsst/contact')}}">ข้อมูลการติดต่อ</a></li>
+                    <li><a href="{{url('/adminAsst/customer-privilege')}}">รับสิทธิพิเศษ</a></li>
                     <li><a href="{{ route('adminAsst.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">ออกจากระบบ</a></li>
                     <form id="logout-form" action="{{ 'App\AdminAsst' == Auth::getProvider()->getModel() ? route('adminAsst.logout') : route('adminAsst.logout') }}" method="POST" style="display: none;">@csrf</form>
                 </ul>

@@ -67,9 +67,9 @@ class LittleEdosController extends Controller
         
         $phone_unique = count(CustomerPrivilege::where('phone',$phone)->get());
         $card_id_unique = count(CustomerPrivilege::where('card_id',$card_id)->get());
-        
+
         if($phone_unique == 0 && $card_id_unique == 0) {
-            if($name == null || $phone == null || $address == null || $privilege == null || $card_id == null) { // ไม่ได้กรอกข้อมูล
+            if($name == null || $phone == null || $privilege == null || $card_id == null) { // ไม่ได้กรอกข้อมูล
                 $objData = new \stdClass();
                 $objData->status = "NULL";
     

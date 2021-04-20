@@ -36,7 +36,7 @@
                           <input type="text" class="phone_format form-control" name="phone" id="phone" placeholder="เบอร์โทรศัพท์">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea class="form-control" name="address" id="address" placeholder="ที่อยู่ปัจจุบัน"></textarea>
+                            <textarea class="form-control" name="address" id="address" placeholder="ที่อยู่ปัจจุบัน (ถ้ามี)"></textarea>
                           </div>
                         <input type="hidden" name="privilege" value="รับฟรี เนื้อวากิว A4 100g<br>เมื่อทานอาหารครบ 1,000 บาท" id="privilege">
                         <div class="form-group col-md-12">

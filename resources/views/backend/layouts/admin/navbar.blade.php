@@ -18,6 +18,7 @@
                     <li><a href="{{url('/admin/list-adminAsst')}}">จัดการบัญชีผู้ใช้</a></li>
                     <li><a href="{{url('/admin/manage-image')}}">จัดการรูปภาพเว็บไซต์</a></li>
                     <li><a href="{{url('/admin/manage-table')}}">จัดการโต๊ะอาหาร</a></li>
+                    <li><a href="{{url('/admin/customer-privilege')}}">รับสิทธิพิเศษ</a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">ออกจากระบบ</a></li>
                     <form id="logout-form" action="{{ 'App\User' == Auth::getProvider()->getModel() ? route('logout') : route('logout') }}" method="POST" style="display: none;">@csrf</form>
                 </ul>

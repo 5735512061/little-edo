@@ -11,6 +11,8 @@ use App\model\Reserve;
 use App\model\Table;
 use App\model\Image;
 use App\model\ReserveTableDate;
+use App\model\CustomerPrivilege;
+use App\model\StatusCustomerPrivilege;
 use App\AdminAsst;
 
 class AdminController extends Controller
@@ -242,4 +244,35 @@ class AdminController extends Controller
                                                            ->with('date',$date)
                                                            ->with('selectTables',$selectTables);
     }
+
+    public function customerPrivilege(Request $request){
+        $NUM_PAGE = 20;
+        $privileges = CustomerPrivilege::paginate($NUM_PAGE);
+        $page = $request->input('page');
+        $page = ($page != null)?$page:1;
+        return view('backend/admin/privilege/customer-privilege')->with('NUM_PAGE',$NUM_PAGE)
+                                                                 ->with('page',$page)
+                                                                 ->with('privileges',$privileges);
+    }
+
+    public function deleteCustomerPrivilege($id){
+        $privilege = CustomerPrivilege::findOrFail($id);
+        $privilege->delete();
+        return back();
+    }
+
+    public function updateStatusPrivilege(Request $request){
+        $customer_privilege_id = $request->get('id');
+        $status = $request->get('status');
+        $date = Carbon::now()->format('d/m/Y');
+        
+        $status_privilege = new StatusCustomerPrivilege;
+        $status_privilege->customer_privilege_id = $customer_privilege_id;
+        $status_privilege->status = $status;
+        $status_privilege->date = $date;
+        $status_privilege->save();
+
+        return back();
+    }
+
 }

@@ -76,6 +76,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/delete-table/{id}','Backend\\AdminController@deleteTable');
         Route::get('/edit-table/{id}','Backend\\AdminController@editTable');
         Route::post('/edit-table','Backend\\AdminController@updateTable');
+        // ตรวจสอบสิทธิ์
+        Route::get('/customer-privilege','Backend\\AdminController@customerPrivilege');
+        Route::get('/delete-customer-privilege/{id}','Backend\\AdminController@deleteCustomerPrivilege');
+        Route::post('/update-status-privilege','Backend\\AdminController@updateStatusPrivilege');
         
     });
 });
@@ -103,4 +107,7 @@ Route::group(['prefix' => 'adminAsst'], function(){
     Route::post('/search-reserveTableDate','Backend\\AdminAsstController@searchReserveTableDate');
     // ข้อมูลการติดต่อของลูกค้า
     Route::get('/contact','Backend\\AdminAsstController@contact');
+    // ตรวจสอบสิทธิ์
+    Route::get('/customer-privilege','Backend\\AdminAsstController@customerPrivilege');
+    Route::post('/update-status-privilege','Backend\\AdminAsstController@updateStatusPrivilege');
 });
