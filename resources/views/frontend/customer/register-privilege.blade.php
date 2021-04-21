@@ -13,18 +13,18 @@
     }
 </style>
 @section("content")
-<section class="banner_area_menu banner_area">
-    <div class="container">
-    </div>
-</section>
+
 @include("/frontend/layouts/navbar")
-<section class="contact_area">
+<section class="contact_area" style="margin-top: 4rem;">
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <div class="row contact_form_area">
-                    <h3 class="contact_title">ลงทะเบียนรับสิทธิพิเศษ</h3>
+                    <p class="text-center">
+                        <img src="{{ asset('/images/template/logo-2.png')}}" alt="#" width="25%" style="margin-bottom:10px;">
+                     </p>
+                    <h4 class="contact_title" style="font-size: 26px; text-align:center; margin-bottom:-20px; font-weight: 900;">ลงทะเบียนรับฟรี<br> Wagyu Miyazaki A4</h4>
                     <form class="sendurl">
                         <div class="form-group col-md-12">
                             <input type="text" onkeyup="autoTab(this)" id="txtID" class="form-control" name="card_id" placeholder="หมายเลขบัตรประชาชน 13 หลัก">
@@ -43,10 +43,10 @@
                         <div class="panel-body" style="font-family: 'Kanit';">
                             <h3 style="font-weight: normal !important; font-family: 'Kanit';">เงื่อนไขในการลงทะเบียนรับสิทธิพิเศษ</h3>
                             <span class="tab-number">- รับฟรี เนื้อมิยาซากิวากิว A4 100g เมื่อทานอาหารครบ 1,000.-</span><br>
-                            <span class="tab-number">- สิทธิพิเศษนี้ไม่สามารถใช้ร่วมกับรายการส่งเสริมการขายอื่นได้</span><br>
-                            <span class="tab-number">- สามารถใช้สิทธิ์ได้ 1 บิล ต่อ 1 สิทธิ์เท่านั้น</span><br>
-                            <span class="tab-number">- เงื่อนไขเป็นไปตามที่บริษัทกำหนด ขอสงวนสิทธิ์ยกเลิกหรือเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบ</span><br>
-                            <span class="tab-number">- สามารถใช้สิทธิ์ได้ตั้งแต่วันนี้ - 30 เม.ย. 64 เท่านั้น</span><br><br>
+                            <span class="tab-number">- สิทธิพิเศษนี้ ไม่สามารถใช้ร่วมกับรายการส่งเสริมการขายอื่นได้</span><br>
+                            <span class="tab-number">- สามารถใช้สิทธิ์ได้ 1 สิทธิ์ ต่อ 1 บิล เท่านั้น</span><br>
+                            <span class="tab-number">- เงื่อนไขเป็นไปตามที่บริษัทกำหนด ขอสงวนสิทธิ์ในการแก้ไข เปลี่ยนแปลง หรือยกเลิกโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</span><br>
+                            <span class="tab-number">- สามารถใช้สิทธิ์ได้ตั้งแต่ วันนี้ - 30 เม.ย. 64 เท่านั้น</span><br><br>
                             <p><input type="checkbox" id="checkme" name="contidion" value="accept"> ยอมรับเงื่อนไขในการลงทะเบียนรับสิทธิพิเศษ</p>
                         </div> 
                         <div class="form-group col-md-12">
@@ -63,10 +63,13 @@
     <div class="modal-dialog modal-sm" style="margin-top:20rem !important;">
         <div class="modal-content">
             <div class="modal-body">
+                <p class="text-center">
+                    <img src="{{ asset('/images/template/logo-2.png')}}" alt="#" width="30%" style="margin-bottom:20px;">
+                 </p>
                 <div id="tag-id"></div>
             </div>
-            <div class="modal-footer" style="background-color: #ff9100d4; font-family:'Kanit';">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">ปิด</button> 
+            <div class="modal-footer" style="background-color: #000000; font-family:'Kanit';">
+                <button type="button" class="btn btn-secondary" style="color: #ffffff;" data-dismiss="modal" id="close">ปิด</button> 
             </div>
         </div>
     </div>
@@ -182,7 +185,7 @@ $('.sendurl').submit(function(e){
                     $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#000000;">หมายเลขบัตรประชาชนนี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
                 }
                 else if(response.status === "Pass"){
-                    $('#tag-id').html('<p style="text-align: center; font-weight: bold; color:#000000; font-family:Kanit;">สิทธิพิเศษสำหรับ คุณ'+response.name+'</p><p style="text-align: center; color:#000000; font-family:Kanit;">'+response.privilege+'</p><p style="text-align: center; background-color:#ff9100d4; color:#000000; margin:0px 80px 0px 80px; font-family:Kanit; font-size:25;">'+response.code+'</p><p style="margin-top:5px;font-size:15px; text-align: center; color:#000000; font-family:Kanit;">* แสดงรหัสต่อพนักงานเพื่อรับสิทธิพิเศษ</p><p style="text-align: center; color:red; font-family:Kanit;">* สามารถใช้สิทธิ์ได้ตั้งแต่วันนี้ - 30 เม.ย. 64</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-weight: bold; color:#000000; font-family:Kanit;">สิทธิพิเศษสำหรับ คุณ'+response.name+'</p><p style="text-align: center; color:#000000; font-family:Kanit;">'+response.privilege+'</p><p style="text-align: center; background-color:#ff0000; color:#ffffff; margin:0px 60px 0px 60px; font-family:Kanit; font-size:25;">'+response.code+'</p><p style="margin-top:5px;font-size:15px; text-align: center; color:#000000; font-family:Kanit;">แสดงรหัสต่อพนักงานเพื่อรับสิทธิพิเศษ</p><p style="text-align: center; color:red; font-family:Kanit;">* สามารถใช้สิทธิ์ได้ตั้งแต่วันนี้ - 30 เม.ย. 64</p><p style="text-align: center; color:red; font-family:Kanit;">* กรุณาบันทึกภาพหน้าจอเพื่อแสดงต่อพนักงาน</p>')
                 }
                 console.log(response);
             }

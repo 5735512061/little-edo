@@ -62,9 +62,9 @@
                                 <a type="button" data-toggle="modal" data-target="#Modal{{$value->id}}">
                                     <i class="fa fa-pencil-square-o" style="color:blue;"></i>
                                 </a>
-                                <a href="{{url('/admin/delete-customer-privilege/')}}/{{$value->id}}" onclick="return confirm('Are you sure to delete ?')">
+                                {{-- <a href="{{url('/admin/delete-customer-privilege/')}}/{{$value->id}}" onclick="return confirm('Are you sure to delete ?')">
                                 <i class="fa fa-trash" style="color:red;"></i>
-                                </a>
+                                </a> --}}
                             </td>
                         </tr>
                         <!-- Modal -->
