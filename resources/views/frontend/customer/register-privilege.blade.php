@@ -45,7 +45,8 @@
                             <span class="tab-number">- รับฟรี เนื้อมิยาซากิวากิว A4 100g เมื่อทานอาหารครบ 1,000.-</span><br>
                             <span class="tab-number">- สิทธิพิเศษนี้ไม่สามารถใช้ร่วมกับรายการส่งเสริมการขายอื่นได้</span><br>
                             <span class="tab-number">- สามารถใช้สิทธิ์ได้ 1 บิล ต่อ 1 สิทธิ์เท่านั้น</span><br>
-                            <span class="tab-number">- เงื่อนไขเป็นไปตามที่บริษัทกำหนด ขอสงวนสิทธิ์ยกเลิกหรือเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบ</span><br><br>
+                            <span class="tab-number">- เงื่อนไขเป็นไปตามที่บริษัทกำหนด ขอสงวนสิทธิ์ยกเลิกหรือเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบ</span><br>
+                            <span class="tab-number">- สามารถใช้สิทธิ์ได้ตั้งแต่วันนี้ - 30 เม.ย. 64 เท่านั้น</span><br><br>
                             <p><input type="checkbox" id="checkme" name="contidion" value="accept"> ยอมรับเงื่อนไขในการลงทะเบียนรับสิทธิพิเศษ</p>
                         </div> 
                         <div class="form-group col-md-12">
@@ -64,7 +65,7 @@
             <div class="modal-body">
                 <div id="tag-id"></div>
             </div>
-            <div class="modal-footer" style="background-color: #979797; font-family:'Kanit';">
+            <div class="modal-footer" style="background-color: #ff9100d4; font-family:'Kanit';">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">ปิด</button> 
             </div>
         </div>
@@ -172,16 +173,16 @@ $('.sendurl').submit(function(e){
         },
             success: function(response) {
                 if(response.status === "NULL") {
-                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#979797;">กรุณากรอกข้อมูลให้ครบถ้วน</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#000000;">กรุณากรอกข้อมูลให้ครบถ้วน</p>')
                 }
                 else if(response.status == "phone_unique"){
-                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#979797;">หมายเลขโทรศัพท์นี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#000000;">หมายเลขโทรศัพท์นี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
                 }
                 else if(response.status == "card_id_unique"){
-                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#979797;">หมายเลขบัตรประชาชนนี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#000000;">หมายเลขบัตรประชาชนนี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
                 }
                 else if(response.status === "Pass"){
-                    $('#tag-id').html('<p style="text-align: center; font-weight: bold; color:#979797; font-family:Kanit;">สิทธิพิเศษสำหรับ คุณ'+response.name+'</p><p style="text-align: center; color:#979797; font-family:Kanit;">'+response.privilege+'</p><p style="text-align: center; background-color:#979797; color:#ffffff; margin:0px 80px 0px 80px; font-family:Kanit;">'+response.code+'</p><p style="margin-top:5px;font-size:15px; text-align: center; color:#979797; font-family:Kanit;">* กรุณาแสดงรหัสเพื่อรับสิทธิพิเศษ</p>')
+                    $('#tag-id').html('<p style="text-align: center; font-weight: bold; color:#000000; font-family:Kanit;">สิทธิพิเศษสำหรับ คุณ'+response.name+'</p><p style="text-align: center; color:#000000; font-family:Kanit;">'+response.privilege+'</p><p style="text-align: center; background-color:#ff9100d4; color:#000000; margin:0px 80px 0px 80px; font-family:Kanit; font-size:25;">'+response.code+'</p><p style="margin-top:5px;font-size:15px; text-align: center; color:#000000; font-family:Kanit;">* แสดงรหัสต่อพนักงานเพื่อรับสิทธิพิเศษ</p><p style="text-align: center; color:red; font-family:Kanit;">* สามารถใช้สิทธิ์ได้ตั้งแต่วันนี้ - 30 เม.ย. 64</p>')
                 }
                 console.log(response);
             }

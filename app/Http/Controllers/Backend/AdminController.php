@@ -257,6 +257,7 @@ class AdminController extends Controller
 
     public function deleteCustomerPrivilege($id){
         $privilege = CustomerPrivilege::findOrFail($id);
+        $status = StatusCustomerPrivilege::where('customer_privilege_id',$id)->delete();
         $privilege->delete();
         return redirect()->action('Backend\AdminController@customerPrivilege');   
     }
