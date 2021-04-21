@@ -39,8 +39,17 @@
                             <textarea class="form-control" name="address" id="address" placeholder="ที่อยู่ปัจจุบัน (ถ้ามี)"></textarea>
                           </div>
                         <input type="hidden" name="privilege" value="รับฟรี เนื้อวากิว A4 100g<br>เมื่อทานอาหารครบ 1,000 บาท" id="privilege">
+                        
+                        <div class="panel-body" style="font-family: 'Kanit';">
+                            <h3 style="font-weight: normal !important; font-family: 'Kanit';">เงื่อนไขในการลงทะเบียนรับสิทธิพิเศษ</h3>
+                            <span class="tab-number">- รับฟรี เนื้อมิยาซากิวากิว A4 100g เมื่อทานอาหารครบ 1,000.-</span><br>
+                            <span class="tab-number">- สิทธิพิเศษนี้ไม่สามารถใช้ร่วมกับรายการส่งเสริมการขายอื่นได้</span><br>
+                            <span class="tab-number">- สามารถใช้สิทธิ์ได้ 1 บิล ต่อ 1 สิทธิ์เท่านั้น</span><br>
+                            <span class="tab-number">- เงื่อนไขเป็นไปตามที่บริษัทกำหนด ขอสงวนสิทธิ์ยกเลิกหรือเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบ</span><br><br>
+                            <p><input type="checkbox" id="checkme" name="contidion" value="accept"> ยอมรับเงื่อนไขในการลงทะเบียนรับสิทธิพิเศษ</p>
+                        </div> 
                         <div class="form-group col-md-12">
-                            <button class="btn btn-default submit_btn btn_sub" type="submit" class="send" data-toggle="modal" data-target="#myModal" data-backdrop="static">ลงทะเบียนรับสิทธิ์</button>
+                            <button disabled="disabled" id="sendNewSms" class="btn btn-default submit_btn btn_sub" type="submit" class="send" data-toggle="modal" data-target="#myModal" data-backdrop="static">ลงทะเบียนรับสิทธิ์</button>
                         </div>
                     </form>
                 </div>
@@ -50,13 +59,13 @@
     </div>
 </section>
 <div class="modal fade mobile" id="myModal" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-sm" style="margin-top:20rem !important;">
         <div class="modal-content">
             <div class="modal-body">
                 <div id="tag-id"></div>
             </div>
-            <div class="modal-footer" style="background-color: #979797;">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">ปิด</button>
+            <div class="modal-footer" style="background-color: #979797; font-family:'Kanit';">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">ปิด</button> 
             </div>
         </div>
     </div>
@@ -180,10 +189,24 @@ $('.sendurl').submit(function(e){
 });
 
 $('#close').click(function(){
-    $('#name').val('')
-    $('#phone').val('')
-    $('#address').val('')
-    $('#txtID').val('')
+    $('#name').val('');
+    $('#phone').val('');
+    $('#address').val('');
+    $('#txtID').val('');
+    $('#checkme').prop('checked', false);  
 });
+</script>
+
+<script>
+    var checker = document.getElementById('checkme');
+    var sendbtn = document.getElementById('sendNewSms');
+        // when unchecked or checked, run the function
+        checker.onchange = function(){
+            if(this.checked){
+                sendbtn.disabled = false;   
+            } else {
+                sendbtn.disabled = true;
+            }
+    }
 </script>
 @endsection
