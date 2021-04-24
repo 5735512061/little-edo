@@ -21,8 +21,22 @@
         </div>
     </section>
     @include("/frontend/layouts/navbar")
+    <!--================Our Gallery Area =================-->
+    <div class="container"><br>
+        <div class="row">
+            @foreach ($gallery_menu_images as $gallery_menu_image => $value)
+                <div class="col-md-3 col-sm-6" style="margin-bottom: 10px;">
+                    <div class="gallery" id="single-images"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+                        <a href="{{url('/img_upload/img_website')}}/{{$value->image}}" class="singleImage2"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
+                            <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" class="img-responsive" style="width:100% !important;">
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
     <!--================End Banner Area =================-->
-    <section class="most_popular_item_area menu_list_page">
+    {{-- <section class="most_popular_item_area menu_list_page">
         <div class="container">
             <div class="popular_filter">
                 <ul>
@@ -61,6 +75,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--================End Our feature Area =================-->
 @endsection

@@ -27,7 +27,7 @@
     @include("/frontend/layouts/navbar")
 
     <!--================Our Gallery Area =================-->
-    <div class="container"><br>
+    {{-- <div class="container"><br>
         <div class="row">
             @foreach ($gallery_menu_images as $gallery_menu_image => $value)
                 <div class="col-md-3 col-sm-6" style="margin-bottom: 10px;">
@@ -39,7 +39,7 @@
                 </div>
             @endforeach
         </div>
-    </div>
+    </div> --}}
 
     <section class="our_gallery_area" id="desktop">
         <div class="container">

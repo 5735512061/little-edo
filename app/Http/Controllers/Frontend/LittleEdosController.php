@@ -44,7 +44,9 @@ class LittleEdosController extends Controller
 
     public function menu() {
         $menus = Menu::get();
-        return view('frontend/littleEdo/menu')->with('menus',$menus);
+        $gallery_menu_images = Image::where('type','gallery_menu_image')->orderBy('id','asc')->get();
+        return view('frontend/littleEdo/menu')->with('menus',$menus)
+                                             ->with('gallery_menu_images',$gallery_menu_images);
     }
 
     public function specialMenu(){
