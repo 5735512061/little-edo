@@ -54,6 +54,11 @@ class LittleEdosController extends Controller
         return view('frontend/littleEdo/special-menu')->with('special_menus',$special_menus);
     }
 
+    // ปิดลงทะเบียนรับสิทธิ์
+    public function registerPrivilegeClose() {
+        return view('frontend/customer/register-privilege-close');
+    }
+    // ลงทะเบียนรับสิทธิ์
     public function registerPrivilege() {
         return view('frontend/customer/register-privilege');
     }

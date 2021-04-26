@@ -37,7 +37,8 @@ Route::group(['prefix' => '/little-edo'], function(){
     // เมนูพิเศษ
     Route::get('/special-menu','Frontend\\LittleEdosController@specialMenu');
     // ลงทะเบียนรับสิทธิ์
-    Route::get('/register-privilege','Frontend\\LittleEdosController@registerPrivilege');
+    Route::get('/register-privilege','Frontend\\LittleEdosController@registerPrivilegeClose');
+    // Route::get('/register-privilege','Frontend\\LittleEdosController@registerPrivilege');
     Route::post('/register-privilege','Frontend\\LittleEdosController@registerPrivilegePost');
 });
 
