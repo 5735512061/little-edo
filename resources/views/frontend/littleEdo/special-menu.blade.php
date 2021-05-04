@@ -22,7 +22,7 @@
                 <div class="col-md-4 col-xs-6" style="margin-bottom: 10px;">
                     <div class="gallery" id="single-images" style=" border:2px solid rgb(179 179 179 / 32%);"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
                         <a href="{{url('/img_upload/img_website')}}/{{$value->image}}" class="singleImage2"> <!-- รูปภาพโชว์ขึ้นมาเป็นสไลด์ -->
-                            <img src="{{url('/img_upload/img_website')}}/{{$value->image}}" class="img-responsive" style="width:180px !important; height:140px !important;">
+                            <center><img src="{{url('/img_upload/img_website')}}/{{$value->image}}" class="img-responsive" style="width:100% !important; height:140px !important;"></center>
                         </a>
                         <h4 style="font-family: 'Kanit'; text-align:center;">{{$value->heading}}</h4>
                         <h4 style="font-family: 'Kanit'; text-align:center;">{{$value->detail}}</h4><br>
