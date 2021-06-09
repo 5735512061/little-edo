@@ -36,7 +36,7 @@
         </div>
     </div>
     <!--================End Banner Area =================-->
-    {{-- <section class="most_popular_item_area menu_list_page">
+    <section class="most_popular_item_area menu_list_page">
         <div class="container">
             <div class="popular_filter">
                 <ul>
@@ -75,6 +75,6 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!--================End Our feature Area =================-->
 @endsection
