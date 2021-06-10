@@ -15,10 +15,10 @@
                 <img src="{{ asset('/images/template/logo.png')}}" width="10%">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{url('/adminAsst/list-menu')}}">จัดการเมนูอาหาร</a></li>
-                    <li><a href="{{url('/adminAsst/contact')}}">ข้อมูลการติดต่อ</a></li>
+                    <li><a href="{{url('/adminAsst/manage-table')}}">จัดการโต๊ะอาหาร</a></li>
                     <li><a href="{{url('/adminAsst/customer-privilege')}}">รับสิทธิพิเศษ</a></li>
-                    <li><a href="{{ route('adminAsst.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">ออกจากระบบ</a></li>
-                    <form id="logout-form" action="{{ 'App\AdminAsst' == Auth::getProvider()->getModel() ? route('adminAsst.logout') : route('adminAsst.logout') }}" method="POST" style="display: none;">@csrf</form>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">ออกจากระบบ</a></li>
+                    <form id="logout-form" action="{{ 'App\User' == Auth::getProvider()->getModel() ? route('logout') : route('logout') }}" method="POST" style="display: none;">@csrf</form>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

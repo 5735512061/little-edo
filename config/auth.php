@@ -48,12 +48,12 @@ return [
 
         'adminAsst' => [
             'driver' => 'session',
-            'provider' => 'adminAssts',
+            'provider' => 'adminassts',
         ],
 
         'api-adminAsst' => [
             'driver' => 'token',
-            'provider' => 'adminAssts',
+            'provider' => 'adminassts',
         ],
     ],
 
@@ -80,7 +80,7 @@ return [
             'model' => App\User::class,
         ],
 
-        'adminAssts' => [
+        'adminassts' => [
             'driver' => 'eloquent',
             'model' => App\AdminAsst::class,
         ],
@@ -113,8 +113,8 @@ return [
             'expire' => 60,
         ],
 
-        'adminAssts' => [
-            'provider' => 'adminAssts',
+        'adminassts' => [
+            'provider' => 'adminassts',
             'table' => 'password_resets',
             'expire' => 60,
         ],

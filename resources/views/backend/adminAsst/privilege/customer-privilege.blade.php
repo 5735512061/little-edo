@@ -58,11 +58,15 @@
                                 <td style="color:green;">{{$status}}</td>
                             @endif
                             <td>{{$date}}</td>
+                            @if($value->privilege == "กิจกรรมแจกอูนิ<br>ฟรี 50 กรัม มูลค่า 1,299 บาท")
                             <td>
                                 <a type="button" data-toggle="modal" data-target="#Modal{{$value->id}}">
                                     <i class="fa fa-pencil-square-o" style="color:blue;"></i>
                                 </a>
                             </td>
+                            @else 
+                            <td></td>
+                            @endif
                         </tr>
                         <!-- Modal -->
                         <div class="modal fade" id="Modal{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">

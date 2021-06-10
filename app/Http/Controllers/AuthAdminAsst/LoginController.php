@@ -35,7 +35,7 @@ class LoginController extends Controller
           'adminAsst_name' => $request->adminAsst_name,
           'password' =>$request->password
         ];
-dd(Auth::guard('adminAsst'));
+
        if(Auth::guard('adminAsst')->attempt($credential, $request->member)){
          
          return redirect()->intended(route('adminAsst.home'));
