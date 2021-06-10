@@ -247,7 +247,7 @@ class AdminController extends Controller
 
     public function customerPrivilege(Request $request){
         $NUM_PAGE = 20;
-        $privileges = CustomerPrivilege::paginate($NUM_PAGE);
+        $privileges = CustomerPrivilege::orderByRaw('FIELD(privilege,"กิจกรรมแจกอูนิ<br>ฟรี 50 กรัม มูลค่า 1,299 บาท","รับฟรี เนื้อวากิว A4 100g<br>เมื่อทานอาหารครบ 1,000 บาท")')->paginate($NUM_PAGE);
         $page = $request->input('page');
         $page = ($page != null)?$page:1;
         return view('backend/admin/privilege/customer-privilege')->with('NUM_PAGE',$NUM_PAGE)

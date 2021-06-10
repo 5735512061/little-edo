@@ -24,7 +24,7 @@
                     <p class="text-center">
                         <img src="{{ asset('/images/template/logo-2.png')}}" alt="#" width="25%" style="margin-bottom:10px;">
                      </p>
-                    <h4 class="contact_title" style="font-size: 26px; text-align:center; margin-bottom:-20px; font-weight: 900;">ลงทะเบียนรับฟรี<br> Wagyu Miyazaki A4</h4>
+                    <h4 class="contact_title" style="font-size: 26px; text-align:center; margin-bottom:-20px; font-weight: 900;">กิจกรรมแจกอูนิ<br>ฟรี 50 กรัม มูลค่า 1,299 บาท</h4>
                     <form class="sendurl">
                         <div class="form-group col-md-12">
                             <input type="text" onkeyup="autoTab(this)" id="txtID" class="form-control" name="card_id" placeholder="หมายเลขบัตรประชาชน 13 หลัก">
@@ -38,15 +38,16 @@
                         <div class="form-group col-md-12">
                             <textarea class="form-control" name="address" id="address" placeholder="ที่อยู่ปัจจุบัน (ถ้ามี)"></textarea>
                           </div>
-                        <input type="hidden" name="privilege" value="รับฟรี เนื้อวากิว A4 100g<br>เมื่อทานอาหารครบ 1,000 บาท" id="privilege">
+                        <input type="hidden" name="privilege" value="กิจกรรมแจกอูนิ<br>ฟรี 50 กรัม มูลค่า 1,299 บาท" id="privilege">
                         
                         <div class="panel-body" style="font-family: 'Kanit';">
                             <h3 style="font-weight: normal !important; font-family: 'Kanit';">เงื่อนไขในการลงทะเบียนรับสิทธิพิเศษ</h3>
-                            <span class="tab-number">- รับฟรี เนื้อมิยาซากิวากิว A4 100g เมื่อทานอาหารครบ 1,000.-</span><br>
+                            <span class="tab-number">- แจกฟรีอูนิ 50g เมื่อทานอาหารครบ 2,000.-</span><br>
                             <span class="tab-number">- สิทธิพิเศษนี้ ไม่สามารถใช้ร่วมกับรายการส่งเสริมการขายอื่นได้</span><br>
                             <span class="tab-number">- สามารถใช้สิทธิ์ได้ 1 สิทธิ์ ต่อ 1 บิล เท่านั้น</span><br>
-                            <span class="tab-number">- เงื่อนไขเป็นไปตามที่บริษัทกำหนด ขอสงวนสิทธิ์ในการแก้ไข เปลี่ยนแปลง หรือยกเลิกโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</span><br>
-                            <span class="tab-number">- สามารถใช้สิทธิ์ได้ตั้งแต่ วันนี้ - 30 เม.ย. 64 เท่านั้น</span><br><br>
+                            <span class="tab-number">- กดไลค์เพจ Little Edo 少し江戸 พร้อมแชร์โพสกิจกรรมแจกอูนิ และคอมเมนต์ใต้โพส</span><br>
+                            <span class="tab-number">- ขอสงวนสิทธิ์ผู้ที่เคยลงทะเบียนรับฟรีเนื้อวากิว A4 แต่ไม่ได้ใช้สิทธิ์ จะไม่สามารถร่วมกิจกรรมแจกอูนิฟรีได้</span><br>
+                            <span class="tab-number">- เงื่อนไขเป็นไปตามที่บริษัทกำหนด ขอสงวนสิทธิ์ในการแก้ไข เปลี่ยนแปลง หรือยกเลิกโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</span><br><br>
                             <p><input type="checkbox" id="checkme" name="contidion" value="accept"> ยอมรับเงื่อนไขในการลงทะเบียนรับสิทธิพิเศษ</p>
                         </div> 
                         <div class="form-group col-md-12">
@@ -183,6 +184,9 @@ $('.sendurl').submit(function(e){
                 }
                 else if(response.status == "card_id_unique"){
                     $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#000000;">หมายเลขบัตรประชาชนนี้เคยลงทะเบียนรับสิทธิ์แล้ว</p>')
+                }
+                else if(response.status == "not_receive"){
+                    $('#tag-id').html('<p style="text-align: center; font-family:Kanit; color:#000000;">ขอสงวนสิทธิ์ผู้ที่เคยลงทะเบียนรับฟรีเนื้อวากิว A4 แต่ไม่ได้ใช้สิทธิ์ จะไม่สามารถร่วมกิจกรรมแจกอูนิฟรีได้</p>')
                 }
                 else if(response.status === "Pass"){
                     $('#tag-id').html('<p style="text-align: center; font-weight: bold; color:#000000; font-family:Kanit;">สิทธิพิเศษสำหรับ คุณ'+response.name+'</p><p style="text-align: center; color:#000000; font-family:Kanit;">'+response.privilege+'</p><p style="text-align: center; background-color:#ff0000; color:#ffffff; margin:0px 60px 0px 60px; font-family:Kanit; font-size:25;">'+response.code+'</p><p style="margin-top:5px;font-size:15px; text-align: center; color:#000000; font-family:Kanit;">แสดงรหัสต่อพนักงานเพื่อรับสิทธิพิเศษ</p><p style="text-align: center; color:red; font-family:Kanit;">* สามารถใช้สิทธิ์ได้ตั้งแต่วันนี้ - 30 เม.ย. 64</p><p style="text-align: center; color:red; font-family:Kanit;">* กรุณาบันทึกภาพหน้าจอเพื่อแสดงต่อพนักงาน</p>')

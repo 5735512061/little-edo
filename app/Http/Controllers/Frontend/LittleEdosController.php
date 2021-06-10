@@ -9,11 +9,12 @@ use App\model\Menu;
 use App\model\Contact;
 use App\model\Image;
 use App\model\CustomerPrivilege;
+use App\model\StatusCustomerPrivilege;
 
 use Carbon\Carbon;
 
 class LittleEdosController extends Controller
-{
+{ 
     public function index() {
         $slide_main_images = Image::where('type','slide_main_image')->get();
         $menu_images = Image::where('type','menu_image')->get();
@@ -72,14 +73,22 @@ class LittleEdosController extends Controller
         $date = Carbon::now()->format('d/m/Y'); //เหมือนกัน
         $code = str_random(8);
         
-        $phone_unique = count(CustomerPrivilege::where('phone',$phone)->get());
-        $card_id_unique = count(CustomerPrivilege::where('card_id',$card_id)->get());
+        $phone_unique = count(CustomerPrivilege::where('phone',$phone)->where('privilege',$privilege)->get());
+        $card_id_unique = count(CustomerPrivilege::where('card_id',$card_id)->where('privilege',$privilege)->get());
+
+        $customer_privilege_id = CustomerPrivilege::where('phone',$phone)->where('card_id',$card_id)->value('id');
+        $status_privilege = count(StatusCustomerPrivilege::where('customer_privilege_id',$customer_privilege_id)->get());
 
         if($phone_unique == 0 && $card_id_unique == 0) {
             if($name == null || $phone == null || $privilege == null || $card_id == null) { // ไม่ได้กรอกข้อมูล
                 $objData = new \stdClass();
                 $objData->status = "NULL";
     
+                return response()->json($objData);
+            }
+            elseif($status_privilege == 0 && $customer_privilege_id != NULL) { //คนที่ลงทะเบียนรับเนื้อวากิว แต่ไม่ได้มาใช้สิทธิ์ จะโดนตัดสิทธิ์
+                $objData = new \stdClass();
+                $objData->status = "not_receive";
                 return response()->json($objData);
             }
             else {
